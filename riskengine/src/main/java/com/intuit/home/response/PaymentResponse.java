@@ -3,6 +3,9 @@ package com.intuit.home.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 
@@ -31,6 +34,8 @@ public class PaymentResponse {
 
     @JsonProperty("succeeded")
     private Boolean succeeded;
+
+    private Map<String, String> details;
 
 
     public Long getPaymentId() {
@@ -96,16 +101,39 @@ public class PaymentResponse {
         return this;
     }
 
+    public Map<String, String> getDetails() {
+        return details;
+    }
+
+    public PaymentResponse setDetails(Map<String, String> details) {
+        this.details = details;
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PaymentResponse)) return false;
+        PaymentResponse that = (PaymentResponse) o;
+        return Objects.equals(getPaymentId(), that.getPaymentId()) && Objects.equals(getAmount(), that.getAmount()) && Objects.equals(getCurrencyId(), that.getCurrencyId()) && Objects.equals(getPayerId(), that.getPayerId()) && Objects.equals(getPayeeId(), that.getPayeeId()) && Objects.equals(getPaymentMethodId(), that.getPaymentMethodId()) && Objects.equals(getSucceeded(), that.getSucceeded()) && Objects.equals(getDetails(), that.getDetails());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPaymentId(), getAmount(), getCurrencyId(), getPayerId(), getPayeeId(), getPaymentMethodId(), getSucceeded(), getDetails());
+    }
+
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer(this.getClass().getSimpleName());
-        sb.append("{paymentId=").append(paymentId);
+        final StringBuffer sb = new StringBuffer("PaymentResponse{");
+        sb.append("paymentId=").append(paymentId);
         sb.append(", amount=").append(amount);
         sb.append(", currencyId=").append(currencyId);
         sb.append(", payerId=").append(payerId);
         sb.append(", payeeId=").append(payeeId);
         sb.append(", paymentMethodId=").append(paymentMethodId);
         sb.append(", succeeded=").append(succeeded);
+        sb.append(", details=").append(details);
         sb.append('}');
         return sb.toString();
     }

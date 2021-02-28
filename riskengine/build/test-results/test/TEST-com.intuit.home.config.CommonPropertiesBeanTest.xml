@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.intuit.home.config.CommonPropertiesBeanTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-02-28T06:50:22" hostname="oleg-vb-bionic" time="0.012">
+<testsuite name="com.intuit.home.config.CommonPropertiesBeanTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-02-28T07:56:23" hostname="oleg-vb-bionic" time="0.01">
   <properties/>
-  <testcase name="getSpringDatasourceUsername()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.001"/>
-  <testcase name="getSpringDataSourceUrl()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.0"/>
+  <testcase name="getSpringDatasourceUsername()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.002"/>
+  <testcase name="getSpringDataSourceUrl()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.001"/>
   <testcase name="getKafkaTopicName()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.001"/>
   <testcase name="getKafkaGroupId()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.001"/>
   <testcase name="toString1()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.001"/>
-  <testcase name="getSpringDatasourcePassword()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.001"/>
+  <testcase name="getSpringDatasourcePassword()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.0"/>
   <testcase name="getBootstrapAddress()" classname="com.intuit.home.config.CommonPropertiesBeanTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

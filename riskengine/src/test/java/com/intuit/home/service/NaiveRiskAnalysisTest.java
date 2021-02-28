@@ -1,9 +1,7 @@
 package com.intuit.home.service;
 
 import com.intuit.home.money.Moneta;
-import com.intuit.home.repository.CurrencyRepository;
-import com.intuit.home.repository.PaymentMethodRepository;
-import com.intuit.home.repository.PaymentRepository;
+import com.intuit.home.repository.*;
 import com.intuit.home.request.PaymentRequest;
 import com.intuit.home.response.PaymentResponse;
 
@@ -32,13 +30,22 @@ public class NaiveRiskAnalysisTest {
     private PaymentRequest paymentRequest;
     @Autowired
     private PaymentRepository paymentRepository;
-    @Autowired private CurrencyRepository currencyRepository;
-    @Autowired private PaymentMethodRepository paymentMethodRepository;
+    @Autowired
+    private CurrencyRepository currencyRepository;
+    @Autowired
+    private PaymentMethodRepository paymentMethodRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private ResponseSender responseSender;
+
+    @Autowired
+    private PayeeRepository payeeRepository;
 
     @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.openMocks(this);
-        naiveRiskAnalysis = new NaiveRiskAnalysis(paymentRepository, currencyRepository, paymentMethodRepository);
+        naiveRiskAnalysis = new NaiveRiskAnalysis(paymentRepository, currencyRepository, paymentMethodRepository, userRepository, responseSender, payeeRepository);
         Field paymentRepositoryFiled = naiveRiskAnalysis.getClass().getDeclaredField("paymentRepository");
         paymentRepositoryFiled.setAccessible(true);
         paymentRepositoryFiled.set(naiveRiskAnalysis, paymentRepository);

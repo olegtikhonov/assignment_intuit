@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.intuit.home.controller.PaymentRequestListenerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-28T06:50:15" hostname="oleg-vb-bionic" time="1.6">
+<testsuite name="com.intuit.home.controller.PaymentRequestListenerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-28T07:56:14" hostname="oleg-vb-bionic" time="1.886">
   <properties/>
-  <testcase name="listen()" classname="com.intuit.home.controller.PaymentRequestListenerTest" time="1.6"/>
-  <system-out><![CDATA[2021-02-28 08:50:16.326  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.Metadata                         : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Cluster ID: VaHL4tLsR_2A_9VkLfJCmg
-2021-02-28 08:50:16.330  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Discovered group coordinator 172.17.0.2:9092 (id: 2147483647 rack: null)
-2021-02-28 08:50:16.339  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] (Re-)joining group
-2021-02-28 08:50:16.366  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group.
-2021-02-28 08:50:16.366  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] (Re-)joining group
-2021-02-28 08:50:16.704 DEBUG 2253 --- [    Test worker] c.i.h.c.PaymentRequestListener           : Received Message in group foo: My story is a lot like yours, only more interesting ‘cause it involves robots.
-2021-02-28 08:50:16.760 ERROR 2253 --- [    Test worker] c.i.h.c.RequestConverter                 : error {}
+  <testcase name="listen()" classname="com.intuit.home.controller.PaymentRequestListenerTest" time="1.886"/>
+  <system-out><![CDATA[2021-02-28 09:56:15.688  INFO 15356 --- [ntainer#0-0-C-1] o.a.k.c.Metadata                         : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Cluster ID: VaHL4tLsR_2A_9VkLfJCmg
+2021-02-28 09:56:15.704  INFO 15356 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Discovered group coordinator 172.17.0.2:9092 (id: 2147483647 rack: null)
+2021-02-28 09:56:15.740  INFO 15356 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] (Re-)joining group
+2021-02-28 09:56:15.822  INFO 15356 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group.
+2021-02-28 09:56:15.824  INFO 15356 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] (Re-)joining group
+2021-02-28 09:56:15.846 DEBUG 15356 --- [    Test worker] c.i.h.c.PaymentRequestListener           : Received Message in group foo: My story is a lot like yours, only more interesting ‘cause it involves robots.
+2021-02-28 09:56:15.927 ERROR 15356 --- [    Test worker] c.i.h.c.RequestConverter                 : error {}
 
 com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'My': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
  at [Source: (String)"My story is a lot like yours, only more interesting ‘cause it involves robots."; line: 1, column: 3]
@@ -115,7 +115,7 @@ com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'My': was expe
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56) [gradle-base-services-6.8.jar:6.8]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
 
-2021-02-28 08:50:17.139 DEBUG 2253 --- [    Test worker] c.i.h.c.PaymentRequestListener           : Received Message in group foo: {"amount":12.45,"currency":"HKD","userId":"3ce33680-069e-4a15-bc7f-0434ac0e6768","payeeId":"f307ba87-97ee-479e-a227-329193d3b8af","paymentMethodId":"b1e733c7-fb7c-40c4-adce-5a42bb84e3c2"}
+2021-02-28 09:56:16.350 DEBUG 15356 --- [    Test worker] c.i.h.c.PaymentRequestListener           : Received Message in group foo: {"amount":12.45,"currency":"HKD","userId":"99b1b125-c83d-4d37-b3ae-c8425e07bcac","payeeId":"806e9bb4-5ab6-483d-a341-cd006b445da8","paymentMethodId":"d7ec6f05-61c5-4a06-b976-62b7cc4a249b"}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

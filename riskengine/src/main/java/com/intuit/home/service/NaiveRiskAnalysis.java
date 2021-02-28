@@ -1,12 +1,8 @@
 package com.intuit.home.service;
 
 import com.intuit.home.common.RequestConverter;
-import com.intuit.home.entity.Currency;
-import com.intuit.home.entity.Payment;
-import com.intuit.home.entity.PaymentMethod;
-import com.intuit.home.repository.CurrencyRepository;
-import com.intuit.home.repository.PaymentMethodRepository;
-import com.intuit.home.repository.PaymentRepository;
+import com.intuit.home.entity.*;
+import com.intuit.home.repository.*;
 import com.intuit.home.request.PaymentRequest;
 import com.intuit.home.response.PaymentResponse;
 import com.intuit.home.strategy.RiskAnalysis;
@@ -14,6 +10,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -26,12 +24,20 @@ public class NaiveRiskAnalysis implements RiskAnalysis<PaymentResponse, Optional
     private PaymentRepository paymentRepository;
     private CurrencyRepository currencyRepository;
     private PaymentMethodRepository paymentMethodRepository;
+    private UserRepository userRepository;
+    private PayeeRepository payeeRepository;
+    private ResponseSender responseSender;
     private final Logger logger = LogManager.getLogger(NaiveRiskAnalysis.class);
 
-    public NaiveRiskAnalysis(PaymentRepository paymentRepository, CurrencyRepository currencyRepository, PaymentMethodRepository paymentMethodRepository) {
+
+    public NaiveRiskAnalysis(PaymentRepository paymentRepository, CurrencyRepository currencyRepository,
+                             PaymentMethodRepository paymentMethodRepository, UserRepository userRepository, ResponseSender responseSender, PayeeRepository payeeRepository) {
         this.paymentRepository = paymentRepository;
         this.currencyRepository = currencyRepository;
         this.paymentMethodRepository = paymentMethodRepository;
+        this.userRepository = userRepository;
+        this.responseSender = responseSender;
+        this.payeeRepository = payeeRepository;
     }
 
 
@@ -40,48 +46,87 @@ public class NaiveRiskAnalysis implements RiskAnalysis<PaymentResponse, Optional
         try {
             if (dataToBEAnalyzed.isPresent()) {
                 Payment payment = RequestConverter.toPayment(dataToBEAnalyzed.get());
+                payment.setSucceeded(false);
 
-                // check if payment is valid:
-                // 1. userID is valid,
-                // 2. paeeID is valid
-                // 3. amount is valid, i.e. is positive
-                // 4. currencyId is valid
-                // 5. paymentMethodId is valid
-
-                validatePayment(payment);
-
+                if(!validatePayment(payment)) {
+                    logger.debug("Sending response ...");
+                    responseSender.sendMessage(new PaymentResponse().setDetails(createExplanation(payment)));
+                    return new PaymentResponse().setSucceeded(false);
+                }
 
                 if ((paymentRepository.count() % 7) != 0) {
                     // accepts the payments
                     payment.setSucceeded(true);
-
-                } else {
-                    payment.setSucceeded(false);
                 }
-
                 paymentRepository.save(payment);
             }
         } catch (Exception e) {
             logger.error("{}", e);
-            return new PaymentResponse().setSucceeded(false);
+            responseSender.sendMessage(new PaymentResponse().setDetails(createErrorMessage("error_occurred", e.toString())));
         }
 
         return new PaymentResponse();
 
     }
 
+    private Map<String, String> createErrorMessage(String error_occurred, String s) {
+        Map<String, String> wrongPayment = new HashMap<>();
+        wrongPayment.put(error_occurred, s);
+        return wrongPayment;
+    }
+
+    private Map<String, String> createExplanation(Payment payment) {
+        Map<String, String> wrongPayment = new HashMap<>();
+        wrongPayment.put("payment_validation", "A payment contains wrong data. Please check it.");
+        wrongPayment.put("payerID", String.valueOf(payment.getPayerId()));
+        wrongPayment.put("payeeID", String.valueOf(payment.getPayeeId()));
+        wrongPayment.put("paymentID", String.valueOf(payment.getPaymentId()));
+        return wrongPayment;
+    }
+
     //TODO: move to validator class
+    /**
+     * Validates @{@link Payment}
+     *
+     * @param payment to be validated.
+     *
+     * @return either true or false
+     */
     boolean validatePayment(Payment payment) {
-        Currency currency = currencyRepository.findByName(payment.getCurrencyId()).get();
+        boolean validationResult = true;
+
         Optional<PaymentMethod> paymentMethod = paymentMethodRepository.findByPaymentMethodId(payment.getPaymentMethodId());
-        if(!paymentMethod.isPresent()) {
+        if (!paymentMethod.isPresent()) {
             logger.error("payment ID seems to be wrong");
+            validationResult = false;
         }
 
+        Optional<Currency> currency = currencyRepository.findByName(payment.getCurrencyId());
+        if (!currency.isPresent()) {
+            logger.error("currency seems to be wrong");
+            validationResult = false;
+        }
 
+        // case check userID
+        Optional<Payer> user = userRepository.findByPayerId(payment.getPayerId());
+        if (!user.isPresent()) {
+            logger.error("user ID seems to be wrong");
+            validationResult = false;
+        }
 
-        //List<Currency> currency = new ArrayList<>();
-        //currencyRepository.findAll().forEach(currency::add);
-        return currency != null;
+        // case - check payeeID
+        Optional<Payee> payee = payeeRepository.findByPayeeId(payment.getPayeeId());
+        if (!payee.isPresent()) {
+            logger.error("payee ID seems to be wrong");
+            validationResult = false;
+        }
+
+        // case payment amount
+        if (payment.getAmount() <= 0d) {
+            logger.error("Amount should be greater than 0.");
+            validationResult = false;
+        }
+
+        return validationResult;
     }
 }

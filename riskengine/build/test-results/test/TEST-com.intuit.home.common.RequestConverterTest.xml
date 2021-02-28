@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.intuit.home.common.RequestConverterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-02-28T06:50:17" hostname="oleg-vb-bionic" time="0.047">
+<testsuite name="com.intuit.home.common.RequestConverterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-02-28T07:56:16" hostname="oleg-vb-bionic" time="0.043">
   <properties/>
-  <testcase name="fromString()" classname="com.intuit.home.common.RequestConverterTest" time="0.023"/>
+  <testcase name="fromString()" classname="com.intuit.home.common.RequestConverterTest" time="0.019"/>
   <testcase name="toString1()" classname="com.intuit.home.common.RequestConverterTest" time="0.018"/>
   <testcase name="toPayment()" classname="com.intuit.home.common.RequestConverterTest" time="0.004"/>
-  <system-out><![CDATA[2021-02-28 08:50:17.274 ERROR 2253 --- [    Test worker] c.i.h.c.RequestConverter                 : error {}
+  <system-out><![CDATA[2021-02-28 09:56:16.523 ERROR 15356 --- [    Test worker] c.i.h.c.RequestConverter                 : error {}
 
 com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "animal" (class com.intuit.home.request.PaymentRequest), not marked as ignorable (5 known properties: "amount", "currency", "paymentMethodId", "payeeId", "userId"])
  at [Source: (String)"{"animal":{"name":"lacy"}}"; line: 1, column: 12] (through reference chain: com.intuit.home.request.PaymentRequest["animal"])
@@ -111,7 +111,7 @@ com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized f
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56) [gradle-base-services-6.8.jar:6.8]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
 
-2021-02-28 08:50:17.294 ERROR 2253 --- [    Test worker] c.i.h.c.RequestConverter                 : error {}
+2021-02-28 09:56:16.541 ERROR 15356 --- [    Test worker] c.i.h.c.RequestConverter                 : error {}
 
 com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class com.intuit.home.common.RequestConverterTest$ClassThatJacksonCannotSerialize and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS)
 	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77) ~[jackson-databind-2.11.4.jar:2.11.4]
