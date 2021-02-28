@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.intuit.home.entity.PaymentMethodTypeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-02-28T06:49:51" hostname="oleg-vb-bionic" time="0.01">
+  <properties/>
+  <testcase name="getPaymentMethodTypeId()" classname="com.intuit.home.entity.PaymentMethodTypeTest" time="0.002"/>
+  <testcase name="getType()" classname="com.intuit.home.entity.PaymentMethodTypeTest" time="0.001"/>
+  <testcase name="toString1()" classname="com.intuit.home.entity.PaymentMethodTypeTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

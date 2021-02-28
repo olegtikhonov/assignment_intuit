@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.intuit.home.repository.PaymentMethodRepositoryTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2021-02-28T06:50:20" hostname="oleg-vb-bionic" time="0.001">
+  <properties/>
+  <testcase name="findByPayerId()" classname="com.intuit.home.repository.PaymentMethodRepositoryTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[2021-02-28 08:50:17.399  INFO 2253 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.intuit.home.repository.PaymentMethodRepositoryTest], using SpringBootContextLoader
+2021-02-28 08:50:17.401  INFO 2253 --- [    Test worker] o.s.t.c.s.AbstractContextLoader          : Could not detect default resource locations for test class [com.intuit.home.repository.PaymentMethodRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-02-28 08:50:17.405  INFO 2253 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.intuit.home.repository.PaymentMethodRepositoryTest]: PaymentMethodRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-02-28 08:50:17.523  INFO 2253 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.intuit.home.RiskEngineMain for test class com.intuit.home.repository.PaymentMethodRepositoryTest
+2021-02-28 08:50:17.532  INFO 2253 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-02-28 08:50:17.562  INFO 2253 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@22db351e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@70a2a802, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7871d91d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@452a7084, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3ea2defa, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5b258394, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2dea00dc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3bd2fbb5, org.springframework.test.context.event.EventPublishingTestExecutionListener@13afb73b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@64e1bff9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1970af59, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3553e091, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5bab8f6f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@325ced94, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2e4a96e1]
+
+
+#####  #  ####  #    #    ###### #    #  ####  # #    # ######
+#    # # #      #   #     #      ##   # #    # # ##   # #
+#    # #  ####  ####      #####  # #  # #      # # #  # #####
+#####  #      # #  #      #      #  # # #  ### # #  # # #
+#   #  # #    # #   #     #      #   ## #    # # #   ## #
+#    # #  ####  #    #    ###### #    #  ####  # #    # ######
+
+
+2021-02-28 08:50:17.754  INFO 2253 --- [    Test worker] c.i.h.r.PaymentMethodRepositoryTest      : Starting PaymentMethodRepositoryTest using Java 1.8.0_201 on oleg-vb-bionic with PID 2253 (started by oleg in /home/oleg/Downloads/intuit/riskengine)
+2021-02-28 08:50:17.756 DEBUG 2253 --- [    Test worker] c.i.h.r.PaymentMethodRepositoryTest      : Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-02-28 08:50:17.759  INFO 2253 --- [    Test worker] c.i.h.r.PaymentMethodRepositoryTest      : No active profile set, falling back to default profiles: default
+2021-02-28 08:50:18.007  INFO 2253 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-28 08:50:18.040  INFO 2253 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 4 JPA repository interfaces.
+2021-02-28 08:50:18.225  INFO 2253 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:5bd70e70-3e0e-47dc-8604-ff1724f7b934;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-02-28 08:50:19.380  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Finished assignment for group at generation 49: {consumer-payments_group-1-72c41e50-7c10-4486-bb3f-0ebbe0a84b25=Assignment(partitions=[payments-0])}
+2021-02-28 08:50:19.390  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Successfully joined group with generation 49
+2021-02-28 08:50:19.395  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Notifying assignor about the new Assignment(partitions=[payments-0])
+2021-02-28 08:50:19.406  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Adding newly assigned partitions: payments-0
+2021-02-28 08:50:19.436  INFO 2253 --- [ntainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Setting offset for partition payments-0 to the committed offset FetchPosition{offset=12, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[172.17.0.2:9092 (id: 0 rack: null)], epoch=0}}
+2021-02-28 08:50:19.439  INFO 2253 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : payments_group: partitions assigned: [payments-0]
+2021-02-28 08:50:19.650  INFO 2253 --- [    Test worker] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-28 08:50:19.686  INFO 2253 --- [    Test worker] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-02-28 08:50:20.107  INFO 2253 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-28 08:50:20.108  INFO 2253 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-28 08:50:20.469  INFO 2253 --- [    Test worker] c.i.h.r.PaymentMethodRepositoryTest      : Started PaymentMethodRepositoryTest in 2.88 seconds (JVM running for 37.248)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

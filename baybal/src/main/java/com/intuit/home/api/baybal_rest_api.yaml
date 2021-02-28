@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+  description: "Payment Service - BayBal"
+  version: "0.0.1"
+  title: "BayBal - payment service"
+servers:
+  - url: 'https://baybal/api/v1'
+  - url: 'wss://baybal/api/v1'
+paths:
+  '/payment':
+    post:
+      tags:
+        - "Creates payment."
+      summary: "Creates a new payment"
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: date time object
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/payment'
+      responses:
+        202:
+          description: "Created requested payment. ID ..."
+          content:
+            text/plain:
+              schema:
+                type: object
+                example: 6e40d1fd-0541-44fa-8afa-7042e5802378
+        405:
+          description: "Invalid input"
+        500:
+          description: "Internal Server Error"
+  '/payment/method/{user_id}':
+    get:
+      tags:
+        - "Gets payment methods."
+      summary: "Gets payment methods."
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: a search key
+          schema:
+            type: string
+            example: 'e8af92bd-1910-421e-8de0-cb3dcf9bf44d'
+      responses:
+        200:
+          description: "Requested payment methods are served."
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 'Visa (*1234)'
+        400:
+          description: "Bad Request - e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing"
+        500:
+          description: "Internal Server Error"
+  '/payment/status/{async_id}':
+    get:
+      tags:
+        - "payment methods"
+      summary: "Gets status of the request."
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: async_id
+          in: path
+          required: true
+          description: a search key
+          schema:
+            type: string
+            example: 'in process'
+      responses:
+        200:
+          description: "suceeded/failed/in process"
+        400:
+          description: "Bad Request - e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing"
+        500:
+          description: "Internal Server Error"
+  '/payee':
+    get:
+      tags:
+        - "Gets payees"
+      summary: "Gets those to whom money is paid or going to be paid."
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: "A list of persons who gotten paid."
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 'Jon Snow jon_show@gameofthtornes.com'
+        400:
+          description: "Bad Request - e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing"
+        500:
+          description: "Internal Server Error"
+
+components:
+  schemas:
+    payment:
+      properties:
+        amount:
+          type: number
+          format: float
+          description: 'Amount to pay.'
+        currency:
+          type: string
+          format: currency
+          description: 'Payment currency.'
+        user-id:
+          type: string
+          format: uuid
+          description: 'Paying user unique identifier.'
+        payee-id:
+          type: string
+          format: uuid
+          description: 'Payee user unique identifier.'
+        payment-method-id:
+          type: string
+          format: uuid
+          description: 'Payment Method unique identifier.'
+
