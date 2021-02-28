@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.intuit.home.controller.PaymentServiceControllerTest" tests="3" skipped="3" failures="0" errors="0" timestamp="2021-02-28T12:32:20" hostname="oleg-vb-bionic" time="0.001">
+  <properties/>
+  <testcase name="getPaymentMethodByUserID()" classname="com.intuit.home.controller.PaymentServiceControllerTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="makePayment()" classname="com.intuit.home.controller.PaymentServiceControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="getPayees()" classname="com.intuit.home.controller.PaymentServiceControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

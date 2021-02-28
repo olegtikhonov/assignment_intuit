@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.intuit.home.entity.PaymentMethodTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-02-28T12:32:20" hostname="oleg-vb-bionic" time="0.008">
+  <properties/>
+  <testcase name="getPaymentMethodId()" classname="com.intuit.home.entity.PaymentMethodTest" time="0.001"/>
+  <testcase name="getBankAccount()" classname="com.intuit.home.entity.PaymentMethodTest" time="0.001"/>
+  <testcase name="getPaymentMethodTypeId()" classname="com.intuit.home.entity.PaymentMethodTest" time="0.001"/>
+  <testcase name="getPayerId()" classname="com.intuit.home.entity.PaymentMethodTest" time="0.001"/>
+  <testcase name="toString1()" classname="com.intuit.home.entity.PaymentMethodTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

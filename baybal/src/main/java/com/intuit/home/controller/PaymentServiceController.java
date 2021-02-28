@@ -1,6 +1,7 @@
 package com.intuit.home.controller;
 
 import com.intuit.home.entity.Payee;
+import com.intuit.home.entity.Payment;
 import com.intuit.home.entity.PaymentMethod;
 import com.intuit.home.request.PaymentRequest;
 import com.intuit.home.service.PaymentService;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -28,15 +30,22 @@ public class PaymentServiceController {
     }
 
 
-    @RequestMapping(path = "/payment/method/{userID}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<List<PaymentMethod>> getPaymentMethodByUserID(@PathVariable(value="userID") String userID) {
+    @RequestMapping(path = "/payment/method/{userID}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<PaymentMethod>> getPaymentMethodByUserID(@PathVariable(value = "userID") String userID) {
         return new ResponseEntity<>(paymentSystemDAO.getPaymentMethods(UUID.fromString(userID)), HttpStatus.OK);
     }
 
-    @PostMapping(path = "/payment", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(path = "/payment", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> makePayment(@RequestBody PaymentRequest paymentRequest) {
         paymentService.sendMessage(paymentRequest);
         return new ResponseEntity<>("Payment request accepted for further processing. Stay tuned.", HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping(path = "/payment", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Payment>> getAllPayments() {
+        logger.debug("Testing get all payments");
+        /*logger.debug(paymentSystemDAO.getAllPayments());*/
+        return new ResponseEntity<>(paymentSystemDAO.getAllPayments(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/payee")

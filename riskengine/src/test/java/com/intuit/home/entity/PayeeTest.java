@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class PayeeTest {
@@ -43,5 +42,20 @@ public class PayeeTest {
     @Test
     public void getEmail() {
         assertEquals(EMAIL, payee.getEmail());
+    }
+
+    @Test
+    void testToString() {
+        assertTrue(payee.toString().contains(Payee.class.getSimpleName()));
+    }
+
+    @Test
+    void testEquals() {
+        assertTrue(payee.equals(payee));
+    }
+
+    @Test
+    void testHashCode() {
+        assertTrue(payee.hashCode() != 0);
     }
 }

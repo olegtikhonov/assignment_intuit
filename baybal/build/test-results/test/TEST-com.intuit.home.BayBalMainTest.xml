@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.intuit.home.BayBalMainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-28T12:32:25" hostname="oleg-vb-bionic" time="14.732">
+  <properties/>
+  <testcase name="main()" classname="com.intuit.home.BayBalMainTest" time="14.732"/>
+  <system-out><![CDATA[
+
+
+
+BBBBBBBBBBBBBBBBB                  AAA               YYYYYYY       YYYYYYYBBBBBBBBBBBBBBBBB                  AAA               LLLLLLLLLLL
+B::::::::::::::::B                A:::A              Y:::::Y       Y:::::YB::::::::::::::::B                A:::A              L:::::::::L
+B::::::BBBBBB:::::B              A:::::A             Y:::::Y       Y:::::YB::::::BBBBBB:::::B              A:::::A             L:::::::::L
+BB:::::B     B:::::B            A:::::::A            Y::::::Y     Y::::::YBB:::::B     B:::::B            A:::::::A            LL:::::::LL
+  B::::B     B:::::B           A:::::::::A           YYY:::::Y   Y:::::YYY  B::::B     B:::::B           A:::::::::A             L:::::L
+  B::::B     B:::::B          A:::::A:::::A             Y:::::Y Y:::::Y     B::::B     B:::::B          A:::::A:::::A            L:::::L
+  B::::BBBBBB:::::B          A:::::A A:::::A             Y:::::Y:::::Y      B::::BBBBBB:::::B          A:::::A A:::::A           L:::::L
+  B:::::::::::::BB          A:::::A   A:::::A             Y:::::::::Y       B:::::::::::::BB          A:::::A   A:::::A          L:::::L
+  B::::BBBBBB:::::B        A:::::A     A:::::A             Y:::::::Y        B::::BBBBBB:::::B        A:::::A     A:::::A         L:::::L
+  B::::B     B:::::B      A:::::AAAAAAAAA:::::A             Y:::::Y         B::::B     B:::::B      A:::::AAAAAAAAA:::::A        L:::::L
+  B::::B     B:::::B     A:::::::::::::::::::::A            Y:::::Y         B::::B     B:::::B     A:::::::::::::::::::::A       L:::::L
+  B::::B     B:::::B    A:::::AAAAAAAAAAAAA:::::A           Y:::::Y         B::::B     B:::::B    A:::::AAAAAAAAAAAAA:::::A      L:::::L         LLLLLL
+BB:::::BBBBBB::::::B   A:::::A             A:::::A          Y:::::Y       BB:::::BBBBBB::::::B   A:::::A             A:::::A   LL:::::::LLLLLLLLL:::::L
+B:::::::::::::::::B   A:::::A               A:::::A      YYYY:::::YYYY    B:::::::::::::::::B   A:::::A               A:::::A  L::::::::::::::::::::::L
+B::::::::::::::::B   A:::::A                 A:::::A     Y:::::::::::Y    B::::::::::::::::B   A:::::A                 A:::::A L::::::::::::::::::::::L
+BBBBBBBBBBBBBBBBB   AAAAAAA                   AAAAAAA    YYYYYYYYYYYYY    BBBBBBBBBBBBBBBBB   AAAAAAA                   AAAAAAALLLLLLLLLLLLLLLLLLLLLLLL
+
+ _____   _____  _  _  _ _______  ______ _____ __   _  ______       _____   ______  _____  _______  _____  _______  ______ _____ _______ __   __
+ |_____] |     | |  |  | |______ |_____/   |   | \  | |  ____      |_____] |_____/ |     | |______ |_____] |______ |_____/   |      |      \_/
+ |       |_____| |__|__| |______ |    \_ __|__ |  \_| |_____|      |       |    \_ |_____| ______| |       |______ |    \_ __|__    |       |
+
+
+ _______  ______  _____  _     _ __   _ ______       _______ _     _ _______      _  _  _  _____   ______        ______
+ |_____| |_____/ |     | |     | | \  | |     \         |    |_____| |______      |  |  | |     | |_____/ |      |     \
+ |     | |    \_ |_____| |_____| |  \_| |_____/         |    |     | |______      |__|__| |_____| |    \_ |_____ |_____/
+
+
+
+2021-02-28 14:32:27.960  INFO 11748 --- [    Test worker] c.i.h.BayBalMain                         : Starting BayBalMain using Java 1.8.0_201 on oleg-vb-bionic with PID 11748 (started by oleg in /home/oleg/Downloads/intuit/baybal)
+2021-02-28 14:32:27.969 DEBUG 11748 --- [    Test worker] c.i.h.BayBalMain                         : Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-02-28 14:32:27.971  INFO 11748 --- [    Test worker] c.i.h.BayBalMain                         : No active profile set, falling back to default profiles: default
+2021-02-28 14:32:30.164  INFO 11748 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-28 14:32:30.302  INFO 11748 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 4 JPA repository interfaces.
+2021-02-28 14:32:31.755  WARN 11748 --- [    Test worker] i.u.w.jsr                                : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2021-02-28 14:32:31.829  INFO 11748 --- [    Test worker] i.u.servlet                              : Initializing Spring embedded WebApplicationContext
+2021-02-28 14:32:31.829  INFO 11748 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3746 ms
+2021-02-28 14:32:32.297  INFO 11748 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-02-28 14:32:33.359  INFO 11748 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-02-28 14:32:35.545  INFO 11748 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-28 14:32:36.962  WARN 11748 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-28 14:32:37.223  INFO 11748 --- [    Test worker] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-28 14:32:39.815  INFO 11748 --- [    Test worker] o.a.k.c.a.AdminClientConfig              : AdminClientConfig values: 
+	bootstrap.servers = [172.17.0.2:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-02-28 14:32:39.904  INFO 11748 --- [    Test worker] o.a.k.c.u.AppInfoParser                  : Kafka version: 2.6.0
+2021-02-28 14:32:39.905  INFO 11748 --- [    Test worker] o.a.k.c.u.AppInfoParser                  : Kafka commitId: 62abe01bee039651
+2021-02-28 14:32:39.905  INFO 11748 --- [    Test worker] o.a.k.c.u.AppInfoParser                  : Kafka startTimeMs: 1614515559904
+2021-02-28 14:32:40.114  INFO 11748 --- [    Test worker] o.a.k.c.c.ConsumerConfig                 : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payments_group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payments_group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-02-28 14:32:40.227  INFO 11748 --- [    Test worker] o.a.k.c.u.AppInfoParser                  : Kafka version: 2.6.0
+2021-02-28 14:32:40.228  INFO 11748 --- [    Test worker] o.a.k.c.u.AppInfoParser                  : Kafka commitId: 62abe01bee039651
+2021-02-28 14:32:40.228  INFO 11748 --- [    Test worker] o.a.k.c.u.AppInfoParser                  : Kafka startTimeMs: 1614515560227
+2021-02-28 14:32:40.232  INFO 11748 --- [    Test worker] o.a.k.c.c.KafkaConsumer                  : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Subscribed to topic(s): payment-result
+2021-02-28 14:32:40.248  INFO 11748 --- [    Test worker] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2021-02-28 14:32:40.265 DEBUG 11748 --- [    Test worker] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2021-02-28 14:32:40.276  INFO 11748 --- [    Test worker] i.undertow                               : starting server: Undertow - 2.2.4.Final
+2021-02-28 14:32:40.306  INFO 11748 --- [    Test worker] o.xnio                                   : XNIO version 3.8.0.Final
+2021-02-28 14:32:40.308  INFO 11748 --- [ntainer#0-0-C-1] o.a.k.c.Metadata                         : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Cluster ID: VaHL4tLsR_2A_9VkLfJCmg
+2021-02-28 14:32:40.316  INFO 11748 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Discovered group coordinator 172.17.0.2:9092 (id: 2147483647 rack: null)
+2021-02-28 14:32:40.330  INFO 11748 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] (Re-)joining group
+2021-02-28 14:32:40.332  INFO 11748 --- [    Test worker] o.x.nio                                  : XNIO NIO Implementation Version 3.8.0.Final
+2021-02-28 14:32:40.421  INFO 11748 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group.
+2021-02-28 14:32:40.422  INFO 11748 --- [ntainer#0-0-C-1] o.a.k.c.c.i.AbstractCoordinator          : [Consumer clientId=consumer-payments_group-1, groupId=payments_group] (Re-)joining group
+2021-02-28 14:32:40.459  INFO 11748 --- [    Test worker] o.j.threads                              : JBoss Threads version 3.1.0.Final
+2021-02-28 14:32:40.581  INFO 11748 --- [    Test worker] o.s.b.w.e.u.UndertowWebServer            : Undertow started on port(s) 6767 (http)
+2021-02-28 14:32:40.605  INFO 11748 --- [    Test worker] c.i.h.BayBalMain                         : Started BayBalMain in 14.322 seconds (JVM running for 22.754)
+2021-02-28 14:32:40.612  INFO 11748 --- [    Test worker] c.i.h.BayBalMain                         : com.intuit.home.BayBalMain started.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

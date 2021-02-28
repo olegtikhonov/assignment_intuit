@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.intuit.home.entity.CurrencyTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-02-28T07:55:57" hostname="oleg-vb-bionic" time="0.007">
-  <properties/>
-  <testcase name="getIsoName()" classname="com.intuit.home.entity.CurrencyTest" time="0.004"/>
-  <testcase name="toString1()" classname="com.intuit.home.entity.CurrencyTest" time="0.001"/>
-  <testcase name="getDescription()" classname="com.intuit.home.entity.CurrencyTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

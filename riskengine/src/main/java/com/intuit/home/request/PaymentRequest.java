@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.intuit.home.money.Moneta;
 
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -83,5 +84,18 @@ public class PaymentRequest extends BaseRequest {
         sb.append(", paymentMethodId=").append(paymentMethodId);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PaymentRequest)) return false;
+        PaymentRequest that = (PaymentRequest) o;
+        return Objects.equals(getAmount(), that.getAmount()) && getCurrency() == that.getCurrency() && Objects.equals(getUserId(), that.getUserId()) && Objects.equals(getPayeeId(), that.getPayeeId()) && Objects.equals(getPaymentMethodId(), that.getPaymentMethodId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAmount(), getCurrency(), getUserId(), getPayeeId(), getPaymentMethodId());
     }
 }

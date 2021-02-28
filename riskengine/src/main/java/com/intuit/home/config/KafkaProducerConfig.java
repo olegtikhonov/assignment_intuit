@@ -11,6 +11,10 @@ import org.springframework.kafka.core.ProducerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Defines a configuration of the kafka producer.
+ * Used to send response messages.
+ */
 @Configuration
 public class KafkaProducerConfig {
     private CommonPropertiesBean propertiesBean;

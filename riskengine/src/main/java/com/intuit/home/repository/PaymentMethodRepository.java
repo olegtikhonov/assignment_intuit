@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public interface PaymentMethodRepository extends CrudRepository<PaymentMethod, UUID> {
     @Query(value = "SELECT p FROM PaymentMethod p WHERE p.payerId = ?1")
-    Optional<List<PaymentMethod>> findByPayerId(UUID payerId);
+    Optional<PaymentMethod> findByPayerId(UUID payerId);
 
     @Query(value = "SELECT p FROM PaymentMethod p WHERE p.paymentMethodId = ?1")
     Optional<PaymentMethod> findByPaymentMethodId(UUID payerId);

@@ -5,6 +5,7 @@ import com.intuit.home.repository.*;
 import com.intuit.home.request.PaymentRequest;
 import com.intuit.home.response.PaymentResponse;
 
+import com.intuit.home.validation.PaymentValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,6 +13,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.lang.reflect.Field;
@@ -28,24 +30,14 @@ import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTest
 public class NaiveRiskAnalysisTest {
     private NaiveRiskAnalysis naiveRiskAnalysis;
     private PaymentRequest paymentRequest;
-    @Autowired
-    private PaymentRepository paymentRepository;
-    @Autowired
-    private CurrencyRepository currencyRepository;
-    @Autowired
-    private PaymentMethodRepository paymentMethodRepository;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private ResponseSender responseSender;
-
-    @Autowired
-    private PayeeRepository payeeRepository;
+    @MockBean private PaymentRepository paymentRepository;
+    @MockBean private PaymentValidator paymentValidator;
+    @MockBean private ResponseSender responseSender;
 
     @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.openMocks(this);
-        naiveRiskAnalysis = new NaiveRiskAnalysis(paymentRepository, currencyRepository, paymentMethodRepository, userRepository, responseSender, payeeRepository);
+        naiveRiskAnalysis = new NaiveRiskAnalysis(responseSender, paymentRepository, paymentValidator);
         Field paymentRepositoryFiled = naiveRiskAnalysis.getClass().getDeclaredField("paymentRepository");
         paymentRepositoryFiled.setAccessible(true);
         paymentRepositoryFiled.set(naiveRiskAnalysis, paymentRepository);

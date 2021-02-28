@@ -1,5 +1,6 @@
 package com.intuit.home.entity;
 
+import com.intuit.home.TestUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -42,5 +43,27 @@ public class PayerTest {
     @Test
     public void toString1() {
         assertTrue(payer.toString().contains(Payer.class.getSimpleName()));
+    }
+
+    @Test
+    void testToString() {
+        assertTrue(payer.toString().contains(Payer.class.getSimpleName()));
+    }
+
+    @Test
+    void testEquals() {
+        assertTrue(payer.equals(payer));
+    }
+
+    @Test
+    void testHashCode() {
+        assertTrue(payer.hashCode() != 0);
+    }
+
+    @Test
+    void testSetUrlCallback() {
+        String urlCallback = TestUtils.next();
+        payer.setUrlCallback(urlCallback);
+        assertEquals(urlCallback, payer.getUrlCallback());
     }
 }

@@ -44,4 +44,14 @@ public class PaymentMethodTest {
     public void toString1() {
         assertTrue(paymentMethod.toString().contains(PaymentMethod.class.getSimpleName()));
     }
+
+    @Test
+    void testEquals() {
+        assertTrue(paymentMethod.equals(paymentMethod));
+    }
+
+    @Test
+    void testHashCode() {
+        assertTrue(paymentMethod.hashCode() != 0);
+    }
 }

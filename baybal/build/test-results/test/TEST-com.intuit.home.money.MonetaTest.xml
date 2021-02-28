@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.intuit.home.money.MonetaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-28T12:32:22" hostname="oleg-vb-bionic" time="0.0">
+  <properties/>
+  <testcase name="to()" classname="com.intuit.home.money.MonetaTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -13,7 +13,7 @@ import java.util.UUID;
  * Represents a response
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class PaymentResponse {
+public class PaymentResponse extends BaseResponse {
     @JsonProperty("paymentId")
     private Long paymentId;
 
